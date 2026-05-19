@@ -12,8 +12,10 @@ public class App {
             texto_estudiante_activo = "Sí";
         }else{
             texto_estudiante_activo = "No";
-
         }
+        System.out.println(nombre_estudiante);
+        System.out.println("Me llamo " + nombre_estudiante + ", tengo " + edad + " años");
+        System.out.println("Estudiante activo " + texto_estudiante_activo);
     }
     
     }
