@@ -12,15 +12,8 @@ public class App {
             texto_estudiante_activo = "Sí";
         }else{
             texto_estudiante_activo = "No";
+
         }
     }
-        // Espacio entre las variable
-        System.out.println(nombre_estudiante + " " + edad + " " + peso);
-        // Salto de línea entre variables
-        System.out.println(nombre_estudiante + "\n" + edad + "\n" + peso);
-        //Guión intermedio entre las variables
-        System.out.println(nombre_estudiante + " - " + edad + " - " + peso);
-        //Interpolación de mensajes en java utilizando format
-        System.out.println("Me llamo " + nombre_estudiante + ", tengo " + edad + " años y peso " + peso + " kg.");
-        System.out.println("Estudiante activo: " + estudiante_activo);
+    
     }
