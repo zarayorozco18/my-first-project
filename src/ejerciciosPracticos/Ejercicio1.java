@@ -1,6 +1,6 @@
 package ejerciciosPracticos;
 
-import java.util.Scanner;
+import java.util.Scanner; 
 
 public class Ejercicio1 {
     static Scanner var_teclado = new Scanner(System.in);

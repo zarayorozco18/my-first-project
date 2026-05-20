@@ -20,12 +20,12 @@ public class Ejercicio3 {
             System.out.print("Ingrese dígito: ");
             int digitoActual = var_teclado.nextInt();
 
-            // Condición de parada: número negativo
+            
             if (digitoActual < 0) {
                 break;
             }
 
-            // Validar que realmente sea un solo dígito (0-9)
+            
             if (digitoActual > 9) {
                 System.out.println("Por favor, ingrese solo un dígito a la vez (0 al 9).");
                 continue;
@@ -33,14 +33,12 @@ public class Ejercicio3 {
 
             contadorDigitos++;
 
-            // Si ya encontramos un fallo antes, seguimos leyendo hasta el negativo,
-            // pero ya no evaluamos más reglas.
+            
             if (!esSegura) {
                 continue;
             }
 
-            // Evaluación de reglas de seguridad (requiere que ya existan al menos dos
-            // dígitos previos)
+            
             if (penultimo != -1 && ultimo != -1) {
 
                 // Regla 1: Tres dígitos iguales seguidos (ej. 5, 5, 5)
@@ -58,13 +56,12 @@ public class Ejercicio3 {
                 }
             }
 
-            // Desplazamiento de variables (actualizar el historial para la siguiente
-            // iteración)
+            
             penultimo = ultimo;
             ultimo = digitoActual;
         }
 
-        // salida
+        
 
         if (contadorDigitos == 0) {
             System.out.println("Resultado: No se ingresó ningún dígito.");

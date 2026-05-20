@@ -11,18 +11,16 @@ public class Ejercicio1 {
     static int contador_consecutivo = 0;
 
     public static void main(String[] args) {
-        // Condiciones
         while (true) {
             System.out.println("Ingrese el peso del dulce en gramos (0 para salir):");
             peso = var_teclado.nextInt();
             System.out.println("Peso: " + peso);
-            // condicion para detener el codigo
             if (peso == 0) {
                 System.out.println("\nProceso finalizado.");
                 break;
             }
 
-            // evaluar dulce defectuoso
+            
             if (peso < 8 || peso > 12) {
                 System.out.println("Dulce defectuoso");
                 dulcesDefectuosos++;
@@ -34,7 +32,7 @@ public class Ejercicio1 {
                     break;
                 }
             }
-            // dulces aprobados
+            
             else {
                 System.out.println("Dulce Aprobado");
                 dulcesAprobados++;
@@ -46,7 +44,7 @@ public class Ejercicio1 {
             }
         }
 
-        // calculamos porcentaje
+
         int totalProcesados = dulcesAprobados + dulcesDefectuosos;
         double porcentajeDefectuosos = 0.0;
 

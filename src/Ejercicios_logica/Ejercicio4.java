@@ -21,7 +21,7 @@ public class Ejercicio4 {
         System.out.print("Ingrese el saldo inicial de la tarjeta ($): ");
         saldo = var_teclado.nextInt();
 
-        // Entradas
+    
         while (true) {
 
             System.out.print("Saldo actual: $" + saldo + "\n Estado: ");
@@ -39,29 +39,28 @@ public class Ejercicio4 {
             System.out.print("Seleccione una opción: ");
             int opcion = var_teclado.nextInt();
 
-            // salida inmediata
+            
             if (opcion == 0) {
                 break;
             }
 
-            // Si está bloqueada y no quiere recargar se rompe aquí
+            
             if (tarjetaBloqueada && opcion != 4) {
                 System.out.println(">>> ERROR: Tarjeta bloqueada. Debe recargar (Opción 4) antes de viajar.");
                 continue;
             }
 
             if (opcion == 1) {
-                // autobus
+                
                 if (saldo - tarifa_autobus < limite) {
                     System.out.println(">>> Fondos insuficientes, superaría el límite negativo permitido.");
                 } else {
                     saldo = saldo - tarifa_autobus;
                     System.out.println(">> Viaje en Autobús registrado.");
-                    ultimoFueMetro = false; // Rompe la racha del metro
+                    ultimoFueMetro = false; 
                 }
             } else if (opcion == 2) {
-                // metro
-                // Determinar el costo evaluando el viaje anterior
+                
                 int costoMetro;
                 if (ultimoFueMetro) {
                     costoMetro = tarifa_metro_descuento;
@@ -69,7 +68,7 @@ public class Ejercicio4 {
                     costoMetro = tarifa_metro;
                 }
 
-                // Verificar fondos
+                
                 if (saldo - costoMetro < limite) {
                     System.out.println("Fondos insuficientes para abordar el Metro.");
                 } else {
@@ -82,7 +81,7 @@ public class Ejercicio4 {
                     ultimoFueMetro = true;
                 }
             } else if (opcion == 3) {
-                // transbordo
+                
                 if (saldo - tarifa_transbordo < limite) {
                     System.out.println("Fondos insuficientes para el transbordo.");
                 } else {
@@ -91,7 +90,7 @@ public class Ejercicio4 {
                     ultimoFueMetro = false;
                 }
             } else if (opcion == 4) {
-                // recarga
+                
                 System.out.print("Ingrese el valor a recargar ($): ");
                 int recarga = var_teclado.nextInt();
 
@@ -99,7 +98,7 @@ public class Ejercicio4 {
                     saldo = saldo + recarga;
                     System.out.println("Recarga exitosa. Nuevo saldo: $" + saldo);
 
-                    // Si al recargar el saldo pasa a ser positivo o cero, se desbloquea
+                    
                     if (saldo >= 0) {
                         tarjetaBloqueada = false;
                     }
@@ -107,17 +106,17 @@ public class Ejercicio4 {
                     System.out.println(" Cantidad de recarga no válida.");
                 }
             } else {
-                // opcion no valida
+                
                 System.out.println("Opción inválida. Intente de nuevo.");
             }
 
-            // Si no recargo
+            
             if (saldo < 0) {
                 tarjetaBloqueada = true;
             }
         }
 
-        // Salida
+        
         System.out.println("\nSimulacion Finalizada");
         System.out.println("Saldo final de la tarjeta: $" + saldo);
         var_teclado.close();
