@@ -7,7 +7,6 @@ public class Ejercicio4 {
     static boolean tarjetaBloqueada = false;
     static boolean ultimoFueMetro = false;
 
-    // tarifas
     static int saldo = 0;
     static int opcion = 0;
     static int tarifa_metro = 3200;
